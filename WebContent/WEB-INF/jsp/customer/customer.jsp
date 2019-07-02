@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <html lang="en">
 <head>
@@ -49,7 +50,7 @@ $(document).ready(function() {
            <div id="newcard-row" class="row justify-content-center align-items-center">
                 <div id="newcard-column" class="col-md-6">
                     <div id="newcard-box" class="col-md-12">
-                        <form name="newcard-form" id="newcard-form" class="form" action="${pageContext.request.contextPath}/cards/newcard" method="post">
+                        <form:form name="newcard-form" id="newcard-form" class="form" action="${pageContext.request.contextPath}/cards/newcard" method="post">
                             <h3 class="text-center text-info">New Card</h3>
                             <div class="form-group">
                                 <label for="cardHoldername" class="text-info">Cardholder Name:</label><br>
@@ -67,7 +68,7 @@ $(document).ready(function() {
                                 <input type="hidden" id="username" name="username" value="${message}">
                                 <input type="submit" name="submit" class="btn btn-info btn-md" value="Create" >                                         
                             </div>                             
-                        </form>
+                        </form:form>
                     </div>
                 </div>
             </div>
