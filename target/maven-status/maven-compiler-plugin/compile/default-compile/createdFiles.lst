@@ -1,0 +1,8 @@
+com\mifinity\config\SecurityConfig.class
+com\mifinity\controllers\HomeController.class
+com\mifinity\entity\Card.class
+com\mifinity\controllers\RegistrationController.class
+com\mifinity\controllers\LoginController.class
+com\mifinity\db\Database.class
+com\mifinity\entity\UserTypes.class
+com\mifinity\entity\User.class
