@@ -35,7 +35,7 @@ $(document).ready(function() {
 		                var trHTML = '';
 		                $.each(res.searchedCards, function (i, item) {
 		                    trHTML += '<tr><td>' + (i+1) + '</td><td>' + item.cardHoldername + '</td><td>' + item.cardNumber +'</td><td>'
-		                    + item.expDate +'"/>'
+		                    + item.expDate
 		                    +'</td></tr>';		                    
 		                });
 		                $('#resultsTable').append(trHTML);
