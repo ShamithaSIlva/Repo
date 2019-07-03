@@ -54,7 +54,7 @@ $(document).ready(function() {
 </head>
 <body>
 <div id="customer">
-        <h3 class="text-info panel">Welcome ${message}</h3>
+        <h3 class="text-info panel"></h3>
         <a href="<c:url value='/logout' />"><span class="panel">Logout</span></a> 
         <a href="<c:url value='/cards/viewCards' />"><span class="panel">Search Cards</span></a> 
         <h1 class="text-center text-white pt-5"></h1>

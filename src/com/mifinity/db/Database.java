@@ -65,6 +65,21 @@ public class Database {
     	return "success";
     }
     
+    public String updateCard(Card card)
+    {
+    	if(userCards.containsKey( card.getUsername() ))
+    	{
+    		for(Card cardInt : userCards.get( card.getUsername() ))
+        	{
+        		if(card.getCardNumber().equals( cardInt.getCardNumber() ))
+        		{
+        			cardInt.setExpDate( card.getExpDate() );
+        		}
+        	}
+    	}    	   	
+    	return "success";
+    }
+    
     public List<Card> getCardsForUser(String username, CardSearchCriteria searchCriteria)
     {
     	List<Card> searchedCards = new ArrayList<Card>();

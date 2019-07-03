@@ -77,4 +77,25 @@ public class CardController
 		return respone;
 	}
 	
+	@PostMapping(value = "/updateCard", produces = { MediaType.APPLICATION_JSON_VALUE })
+	@ResponseBody
+	public CardJsonResponse updateCard( @ModelAttribute @Valid Card card, BindingResult result,Principal principal,HttpSession session )
+	{
+		CardJsonResponse respone = new CardJsonResponse();
+		card.setUsername( (String)session.getAttribute( "username" ) );
+		if ( result.hasErrors())
+		{
+			Map<String, String> errors = result.getFieldErrors().stream().collect( Collectors.toMap( FieldError::getField, FieldError::getDefaultMessage ) );
+			respone.setValidated( false );
+			respone.setErrorMessages( errors );
+		}
+		else
+		{
+			Database.getInstance().updateCard( card );
+			respone.setValidated( true );
+			respone.setCard( card );
+		}
+		return respone;
+	}
+	
 }
