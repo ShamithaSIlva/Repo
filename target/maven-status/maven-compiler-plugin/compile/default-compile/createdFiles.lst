@@ -1,8 +1,14 @@
-com\mifinity\config\SecurityConfig.class
-com\mifinity\controllers\HomeController.class
+com\mifinity\controllers\CustomerController.class
 com\mifinity\entity\Card.class
-com\mifinity\controllers\RegistrationController.class
+com\mifinity\entity\SearchedCardsJsonResponse.class
 com\mifinity\controllers\LoginController.class
 com\mifinity\db\Database.class
+com\mifinity\entity\CardSearchCriteria.class
+com\mifinity\controllers\AdminController.class
+com\mifinity\entity\CardJsonResponse.class
+com\mifinity\controllers\CardController.class
+com\mifinity\config\SecurityConfig.class
+com\mifinity\controllers\HomeController.class
+com\mifinity\controllers\RegistrationController.class
 com\mifinity\entity\UserTypes.class
 com\mifinity\entity\User.class

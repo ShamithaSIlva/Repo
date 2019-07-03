@@ -7,6 +7,7 @@
   <name>Juliyanage Silva</name>
   <description>Juliyanage Silva Test</description>
   <build>
+    <finalName>Mifinity</finalName>
     <sourceDirectory>src</sourceDirectory>
     <plugins>
       <plugin>

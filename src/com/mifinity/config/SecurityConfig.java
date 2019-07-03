@@ -28,7 +28,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter
 	{
 		final Properties users = new Properties();
 		users.put( "admin", "admin,ROLE_ADMIN,enabled" ); 
-		users.put( "abc", "abc,ROLE_CUSTOMER,enabled" ); 
+		users.put( "user", "user,ROLE_CUSTOMER,enabled" ); 
 		return new InMemoryUserDetailsManager( users );
 	}
 	
@@ -44,10 +44,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter
 		.loginPage("/logincustom").loginProcessingUrl("/doLogin")
 	     .usernameParameter("username").passwordParameter("password")
 		.permitAll();
-//		.loginProcessingUrl( "/authenticateUser" )
-//		.permitAll()
-//		.and()
-//		.logout().permitAll();
 	}
 
 }
