@@ -9,9 +9,11 @@ import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.provisioning.InMemoryUserDetailsManager;
+import org.springframework.stereotype.Component;
 
 @Configuration
 @EnableWebSecurity
+@Component
 public class SecurityConfig extends WebSecurityConfigurerAdapter
 {
 
@@ -32,14 +34,20 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter
 	
 	@Override
 	protected void configure( HttpSecurity http ) throws Exception
-	{
+	{		
 		http.authorizeRequests()
 		.anyRequest().authenticated()
+        .antMatchers("/login")
+        .permitAll()
 		.and()
 		.formLogin()
-		.loginPage( "/login" )
-		.loginProcessingUrl( "/authenticateUser" )
+		.loginPage("/logincustom").loginProcessingUrl("/doLogin")
+	     .usernameParameter("username").passwordParameter("password")
 		.permitAll();
+//		.loginProcessingUrl( "/authenticateUser" )
+//		.permitAll()
+//		.and()
+//		.logout().permitAll();
 	}
 
 }

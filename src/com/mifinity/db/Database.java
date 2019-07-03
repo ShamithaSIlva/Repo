@@ -6,6 +6,7 @@ import java.util.List;
 import java.util.Map;
 
 import com.mifinity.entity.Card;
+import com.mifinity.entity.CardSearchCriteria;
 import com.mifinity.entity.User;
 import com.mifinity.entity.UserTypes;
 
@@ -62,5 +63,33 @@ public class Database {
     		userCards.put( card.getUsername(), cards );
     	}    	
     	return "success";
+    }
+    
+    public List<Card> getCardsForUser(String username, CardSearchCriteria searchCriteria)
+    {
+    	List<Card> searchedCards = new ArrayList<Card>();
+    	for(Card card : userCards.get( username ))
+    	{
+    		if(card.getCardNumber().contains( searchCriteria.getCardNumber() ))
+    		{
+    			searchedCards.add( card );
+    		}
+    	}
+    	return searchedCards;
+    }
+    
+    public boolean ifCardExist(String cardNumber,String username)
+    {
+    	if(userCards.get( username ) != null)
+    	{
+    		for(Card card : userCards.get( username ))
+        	{
+        		if(card.getCardNumber().equals( cardNumber ))
+        		{
+        			return true;
+        		}
+        	}
+    	}    	
+    	return false;
     }
 }
