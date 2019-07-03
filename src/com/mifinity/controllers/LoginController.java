@@ -46,7 +46,7 @@ public class LoginController
 			}
 			else if ( inMemoryUserDetailsManager.loadUserByUsername( username ).getAuthorities().contains( new SimpleGrantedAuthority( "ROLE_" + UserTypes.ADMIN.name() ) ) )
 			{
-				view = new ModelAndView( new RedirectView( "/admin", true ) );
+				view = new ModelAndView( new RedirectView( "/admin/home", true ) );
 			}
 		}
 		else

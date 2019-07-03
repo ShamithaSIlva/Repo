@@ -2,6 +2,7 @@ package com.mifinity.db;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
@@ -90,6 +91,23 @@ public class Database {
     			searchedCards.add( card );
     		}
     	}
+    	return searchedCards;
+    }
+    
+    public List<Card> getCardsForAdmin(CardSearchCriteria searchCriteria)
+    {
+    	List<Card> searchedCards = new ArrayList<Card>();
+    	Iterator it = userCards.entrySet().iterator();
+        while (it.hasNext()) {
+            Map.Entry pair = (Map.Entry)it.next();
+            for(Card card :(ArrayList<Card>)pair.getValue())
+            {
+            	if(card.getCardNumber().contains( searchCriteria.getCardNumber() ))
+        		{
+        			searchedCards.add( card );
+        		}
+            }            
+        }
     	return searchedCards;
     }
     
